@@ -7,6 +7,8 @@ export default (context: any) => {
         router.onReady(()=>{
             const matchedComponents = router.getMatchedComponents()
             if(!matchedComponents.length) return reject({code: 404});
+            context.state = {hello: "hello world"};
+            context.rootState = {root: "msg"};
             resolve(app)
         }, reject)
     });
